@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.793c083c.chunk.css",
+    "main.js": "/static/js/main.7da5a46d.chunk.js",
+    "main.js.map": "/static/js/main.7da5a46d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4ba1596e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4ba1596e.js.map",
+    "static/css/2.b95e1924.chunk.css": "/static/css/2.b95e1924.chunk.css",
+    "static/js/2.1eab2689.chunk.js": "/static/js/2.1eab2689.chunk.js",
+    "static/js/2.1eab2689.chunk.js.map": "/static/js/2.1eab2689.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1b9311694f0a31dc967099cc875b8a22.js": "/precache-manifest.1b9311694f0a31dc967099cc875b8a22.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.b95e1924.chunk.css.map": "/static/css/2.b95e1924.chunk.css.map",
+    "static/css/main.793c083c.chunk.css.map": "/static/css/main.793c083c.chunk.css.map",
+    "static/js/2.1eab2689.chunk.js.LICENSE.txt": "/static/js/2.1eab2689.chunk.js.LICENSE.txt",
+    "static/media/Trophy.b46cd256.svg": "/static/media/Trophy.b46cd256.svg",
+    "static/media/logo.jpeg": "/static/media/logo.65f54c25.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ba1596e.js",
+    "static/css/2.b95e1924.chunk.css",
+    "static/js/2.1eab2689.chunk.js",
+    "static/css/main.793c083c.chunk.css",
+    "static/js/main.7da5a46d.chunk.js"
+  ]
+}
