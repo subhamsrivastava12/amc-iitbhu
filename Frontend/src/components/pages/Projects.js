@@ -25,7 +25,7 @@ export default function Projects() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8080/projects")
+    fetch("https://amc-iitbhu.herokuapp.com/projects")
       .then((res) => {
         if (res.ok) {
           return res.json();
