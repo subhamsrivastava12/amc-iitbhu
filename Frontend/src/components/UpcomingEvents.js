@@ -9,6 +9,8 @@ let dt = newDate.getDate();
 let mnth = newDate.getMonth() + 1;
 let yr = newDate.getFullYear();
 
+
+
   const [events, setEvents] = useState([{
 
     name: '',
@@ -17,7 +19,8 @@ let yr = newDate.getFullYear();
     year: '',
     day: '',
     time: '',
-    venue: ''
+    venue: '',
+    link: ''
   }])
 
   useEffect(() => {
@@ -30,14 +33,16 @@ let yr = newDate.getFullYear();
       setEvents(jsonRes)})
   },[])
 
-// events.filter(event => event.year == yr );
+  
 
 
 
+
+//past
  let b = events.sort(function (a, b) {
-  return  b.year - a.year || b.month - a.month|| b.date - a.date|| b.time - a.time;
+  return  a.year - b.year || a.month - b.month|| a.date - b.date|| a.time - b.time;
 });
-b.reverse();
+// b.reverse();
 
   let a = events.sort(function (a, b) {
   return  a.year - b.year || a.month - b.month|| a.date - b.date|| a.time - b.time;
@@ -88,10 +93,12 @@ b.reverse();
                         <div className="details">
                           <div className="name col-l-7">
                             <h3>{event.name}</h3>
-                            <i className="fas fa-clock"> {event.time}</i>
+                            <i className="fas fa-clock"> {event.time}, {event.venue}</i>
+                            
+
                           </div>
                           <div className="join col-l-3">
-                            <a href="#">Join</a>
+                            <a href={event.link}>Join</a>
                           </div>
                         </div>
                     </li>
@@ -109,7 +116,7 @@ b.reverse();
                <h2 className="title1">Past Events</h2>
 
                <div className="event">
-                 {b.filter(event => (event.year <= yr && event.month <= mnth && event.date < dt ) ).map(event => (
+               {b.filter(event => (event.year <= yr && event.month < mnth  ) ).map(event => (
                   <ul>
                     <li className="inline">
 
@@ -123,7 +130,28 @@ b.reverse();
                             <i className="fas fa-clock"> {event.time}</i>
                           </div>
                           <div className="join col-l-3" >
-                            <a href="#"><i id="play" class="fas fa-play fa-80px"  ></i></a>
+                          <a href={event.link}><i id="play" class="fas fa-play fa-80px"  ></i></a>
+                          </div>
+                        </div>
+                    </li>
+
+                  </ul>
+                ))}
+                {b.filter(event => (event.year <= yr && event.month == mnth && event.date<dt ) ).map(event => (
+                  <ul>
+                    <li className="inline">
+
+                        <div className="time col-l-2">
+
+                          <h5>{event.date}/{event.month}</h5>
+                        </div>
+                        <div className="details past">
+                          <div className="name col-l-7">
+                            <h3>{event.name}</h3>
+                            <i className="fas fa-clock"> {event.time}</i>
+                          </div>
+                          <div className="join col-l-3" >
+                          <a href={event.link}><i id="play" class="fas fa-play fa-80px"  ></i></a>
                           </div>
                         </div>
                     </li>

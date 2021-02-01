@@ -32,6 +32,10 @@ const eventSchema = new mongoose.Schema({
     day_number:{
         type: Number,
         required: false
+    },
+    link: {
+        type: String,
+        required: true
     }
 })
 

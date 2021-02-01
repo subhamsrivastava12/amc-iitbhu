@@ -53,6 +53,8 @@ function SaveAndRedirect(path1,path){
     team.time = req.body.time
     team.description = req.body.description
     team.venue = req.body.venue
+    team.link = req.body.link
+    
     try{
         team = await team.save();
         res.redirect(path1);

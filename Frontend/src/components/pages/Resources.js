@@ -43,13 +43,43 @@ export default function Resources() {
 
   //On clicking any of these we need to render(after filtering according to type data) resources page.
 
+  const alltypes = [ ...new Set(resources.map((item) => item.type))];
+  const [resourcetype,setResourcetype]=useState("aerial");
+
+  const filterResources = (type) => {
+    setResourcetype(type);
+    console.log(alltypes);
+  };
+
+  const Types = ({ types, filterResources }) => {
+      // console.log(types);
+    return (
+      <div className="btn-container">
+        {alltypes.map((type,index) => {
+          return (
+            <button
+              key={index}
+              type="button"
+              onClick={() => filterResources(type)}
+              className={resourcetype === type ? "filter-btn active" : "filter-btn inactive"}
+            >
+              {type}
+            </button>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className="rsc-container">
-      <div className='rsc-title' data-aos='fade-down'>
-        <h1>Resources</h1>
-      </div>
+      <div className="projects-title" data-aos='zoom-in'>
+          <h1>Resources</h1>
+          <div className="project-underline"></div>
+        </div>
+      <Types types={alltypes} filterResources={filterResources} />
       <div className="panels-container">
-      {resources.map(resource => (
+      {resources.filter(resource => resource.type === resourcetype).map(resource => (
       <div className='rsc-panel'>
         <div className='rsc-text'>
           <h2>{resource.name}</h2>

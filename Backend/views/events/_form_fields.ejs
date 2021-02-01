@@ -11,8 +11,10 @@
     <input required type="text" value="<%= team.day %>" name="day" id="day" class="form-control mb-4">
     <label for="time">Time of the event(Enter in 24 hour format, such as 11.59 pm as 23.59. Avoid 0s in the end. If time is 15.00 write 15.05)</label>
     <input type="number" value="<%= team.time %>" name="time" id="time" class="form-control mb-4" step="0.01" min="0" max="24">
-    <label for="venue">Venue(such as MS Teams code in case of Online Event or LT-3 in case of Offline event)</label>
+    <label for="venue">Venue(such as "MS Teams"  in case of Online Event or LT-3 in case of Offline event)</label>
     <input type="text" value="<%= team.venue %>" name="venue" id="venue" class="form-control mb-4">
+    <label for="link">Link (MS Teams Link (not code) or youtube_link in case of Online Event and "#" in case of Offline Event</label>)</label>
+    <input type="url" value="<%= team.link %>" name="link" id="link" class="form-control mb-4">
 </div>
 <!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>"> -->
 <a href='/db/events' class="mb-4 btn btn-secondary">Cancel</a>
